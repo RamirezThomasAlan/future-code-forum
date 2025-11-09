@@ -3,73 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título de la página</title>
-    <meta name="description" content="Descripción de la página">
-    
-    <!-- Enlaces a CSS -->
+    <title>FutureCode Forum 2025 - 3ª Edición</title>
     <link rel="stylesheet" href="./css/style.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <!-- Cabecera -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-text">Cargando FutureCode Forum 2025, por favor espere...</div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+        <div class="loader-code">// Inicializando sistema...<br>// Cargando módulos de interfaz...<br>// Preparando experiencia inmersiva...</div>
+    </div>
 
-    <!-- Contenido principal -->
-    <main>
-        <section id="inicio">
-            <h1>Título principal</h1>
-            <p>Contenido de la sección...</p>
-        </section>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">FCF<br>2025</div>
+        <div class="nav-links">
+            <a href="#inicio" class="nav-link">Inicio</a>
+            <a href="#agenda" class="nav-link">Agenda</a>
+            <a href="#testimonios" class="nav-link">Testimonios</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+    </nav>
 
-        <section id="nosotros">
-            <h2>Sobre nosotros</h2>
-            <article>
-                <h3>Nuestra historia</h3>
-                <p>Texto del artículo...</p>
-            </article>
-        </section>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-bg" id="particlesContainer"></div>
+        <h1>FutureCode Forum 2025</h1>
+        <p>La evolución del código comienza acá</p>
+        <div class="hero-date">15, 16 y 17 de noviembre de 2025 – Buenos Aires, Argentina</div>
+        <button class="cta-button" id="inscribirmeBtn">Inscribirme ahora</button>
+    </section>
 
-        <section id="servicios">
-            <h2>Nuestros servicios</h2>
-            <div class="servicios-container">
-                <div class="servicio">
-                    <h3>Servicio 1</h3>
-                    <p>Descripción del servicio...</p>
+    <!-- About Section -->
+    <section id="sobre" class="fade-in">
+        <h2 class="section-title">Sobre el evento</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Desde 2021, FutureCode Forum se convirtió en el punto de encuentro donde desarrolladores, diseñadores y visionarios tecnológicos de todo el mundo comparten ideas, innovación y futuro. En su tercera edición, el evento crece con más charlas, workshops y networking que nunca.</p>
+            </div>
+            <div class="counters">
+                <div class="counter">
+                    <div class="counter-number" data-target="50">0</div>
+                    <div class="counter-text">Participantes</div>
                 </div>
-                <div class="servicio">
-                    <h3>Servicio 2</h3>
-                    <p>Descripción del servicio...</p>
+                <div class="counter">
+                    <div class="counter-number" data-target="10">0</div>
+                    <div class="counter-text">Países representados</div>
+                </div>
+                <div class="counter">
+                    <div class="counter-number" data-target="2000">0</div>
+                    <div class="counter-text">Asistentes</div>
+                </div>
+                <div class="counter">
+                    <div class="counter-number" data-target="3">0</div>
+                    <div class="counter-text">Días de innovación</div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <!-- Barra lateral (opcional) -->
-    <aside>
-        <h3>Contenido relacionado</h3>
-        <p>Información adicional...</p>
-    </aside>
+    <!-- Agenda Section -->
+    <section id="agenda" class="fade-in">
+        <h2 class="section-title">Agenda</h2>
+        <div class="agenda-timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-day">Día 1</div>
+                    <div class="timeline-title">La nueva era del código</div>
+                    <div class="timeline-desc">Charlas sobre IA y desarrollo, explorando las últimas tendencias en inteligencia artificial aplicada al desarrollo de software.</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-day">Día 2</div>
+                    <div class="timeline-title">Experiencias digitales</div>
+                    <div class="timeline-desc">Diseño UX, accesibilidad y tendencias front-end para crear experiencias digitales memorables y accesibles para todos.</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-day">Día 3</div>
+                    <div class="timeline-title">El futuro de la web</div>
+                    <div class="timeline-desc">Paneles con expertos y networking global, discutiendo hacia dónde se dirige el desarrollo web y las tecnologías emergentes.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Pie de página -->
+    <!-- Speakers Section -->
+    <section id="speakers" class="fade-in">
+        <h2 class="section-title">Participantes</h2>
+        <div class="speakers-grid">
+            <div class="speaker-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Alex Johnson" class="speaker-img">
+                <div class="speaker-info">
+                    <div class="speaker-name">Alex Johnson</div>
+                    <div class="speaker-role">Líder de IA en TechVision</div>
+                    <div class="speaker-bio">Especialista en machine learning con más de 10 años de experiencia en desarrollo de algoritmos predictivos para empresas Fortune 500.</div>
+                    <div class="speaker-social">
+                        <a href="#" class="social-link">LinkedIn →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="speaker-card">
+                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Maria Rodriguez" class="speaker-img">
+                <div class="speaker-info">
+                    <div class="speaker-name">Maria Rodriguez</div>
+                    <div class="speaker-role">Directora de UX en DigitalFlow</div>
+                    <div class="speaker-bio">Pionera en diseño centrado en el usuario con enfoque en accesibilidad y experiencias inclusivas para productos digitales globales.</div>
+                    <div class="speaker-social">
+                        <a href="#" class="social-link">LinkedIn →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="speaker-card">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="David Chen" class="speaker-img">
+                <div class="speaker-info">
+                    <div class="speaker-name">David Chen</div>
+                    <div class="speaker-role">CTO en WebInnovate</div>
+                    <div class="speaker-bio">Experto en arquitecturas escalables y tecnologías emergentes, con amplia experiencia en transformación digital empresarial.</div>
+                    <div class="speaker-social">
+                        <a href="#" class="social-link">LinkedIn →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="speaker-card">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Sophia Williams" class="speaker-img">
+                <div class="speaker-info">
+                    <div class="speaker-name">Sophia Williams</div>
+                    <div class="speaker-role">Fundadora de CodeFuture</div>
+                    <div class="speaker-bio">Emprendedora tecnológica con múltiples exitosas startups y defensora de la diversidad en el sector tecnológico.</div>
+                    <div class="speaker-social">
+                        <a href="#" class="social-link">LinkedIn →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="fade-in">
+        <h2 class="section-title">Testimonios</h2>
+        <div class="testimonials-slider">
+            <div class="testimonials-container" id="testimonialsContainer">
+                <div class="testimonial">
+                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Carlos M." class="testimonial-img">
+                    <div class="testimonial-text">"FutureCode Forum transformó completamente mi perspectiva sobre el desarrollo web. Las charlas sobre IA fueron increíbles y el networking invaluable."</div>
+                    <div class="testimonial-name">Carlos M.</div>
+                    <div class="testimonial-role">Desarrollador Frontend en Google</div>
+                </div>
+                <div class="testimonial">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Laura P." class="testimonial-img">
+                    <div class="testimonial-text">"Como diseñadora UX, encontré inspiración en cada sesión. Los workshops prácticos me dieron herramientas que implementé inmediatamente en mis proyectos."</div>
+                    <div class="testimonial-name">Laura P.</div>
+                    <div class="testimonial-role">Diseñadora Senior en Meta</div>
+                </div>
+                <div class="testimonial">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Miguel R." class="testimonial-img">
+                    <div class="testimonial-text">"La combinación perfecta entre teoría y práctica. Los ponentes eran accesibles y las discusiones sobre el futuro de la web fueron fascinantes."</div>
+                    <div class="testimonial-name">Miguel R.</div>
+                    <div class="testimonial-role">CTO en StartupTech</div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn" id="prevTestimonial">←</button>
+                <button class="slider-btn" id="nextTestimonial">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="fade-in">
+        <h2 class="section-title">Galería interactiva</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Conferencia 2023" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="gallery-actions">
+                        <button class="gallery-btn favorite-btn">♥</button>
+                        <button class="gallery-btn share-btn">↗</button>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Networking 2023" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="gallery-actions">
+                        <button class="gallery-btn favorite-btn">♥</button>
+                        <button class="gallery-btn share-btn">↗</button>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Workshop 2023" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="gallery-actions">
+                        <button class="gallery-btn favorite-btn">♥</button>
+                        <button class="gallery-btn share-btn">↗</button>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Exposición 2023" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="gallery-actions">
+                        <button class="gallery-btn favorite-btn">♥</button>
+                        <button class="gallery-btn share-btn">↗</button>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Charla principal 2023" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="gallery-actions">
+                        <button class="gallery-btn favorite-btn">♥</button>
+                        <button class="gallery-btn share-btn">↗</button>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Stand tecnológico 2023" class="gallery-img">
+                <div class="gallery-overlay">
+                    <div class="gallery-actions">
+                        <button class="gallery-btn favorite-btn">♥</button>
+                        <button class="gallery-btn share-btn">↗</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="inscripcion" class="fade-in">
+        <h2 class="section-title">Inscripción</h2>
+        <div class="form-container">
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">Nombre completo</label>
+                    <input type="text" id="name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="form-label">Mensaje (opcional)</label>
+                    <textarea id="message" class="form-input form-textarea"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Enviar inscripción</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="fade-in">
+        <div class="newsletter">
+            <h2>Mantente informado</h2>
+            <p>Suscríbete a nuestro newsletter para recibir las últimas novedades sobre FutureCode Forum 2025</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" class="newsletter-input" placeholder="Tu email" required>
+                <button type="submit" class="newsletter-btn">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
-        <address>
-            Contacto: <a href="mailto:info@misitio.com">info@misitio.com</a>
-        </address>
+        <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-reddit-alien"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-fiverr"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+        </div>
+        <div class="copyright">© 2025 FutureCode Forum. Todos los derechos reservados.</div>
+        <div class="footer-text">
+            Proyecto ficticio desarrollado por Thomas Ramírez - Desarrollador Web con más de 2 años de experiencia, especializado en Landing Pages Profesionales, SEO y Marketing Digital.<br>
+            Esta página fue creada con fines demostrativos, utilizando HTML, CSS y JavaScript puro. No pertenece a ninguna empresa real.<br>
+            Si querés una landing igual de profesional, encargá la tuya por solo $10 USD en mi perfil de <a href="{{FIVERR_URL_AQUI}}" class="fiverr-link">Fiverr</a>.
+        </div>
     </footer>
 
-    <!-- Scripts JavaScript -->
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/541173619142?text=Hola,%20vengo%20de%20tu%20landing%20page%20y%20me%20gustaría%20contratar%20tu%20servicio%20de%20Fiverr%20por%20$10" class="whatsapp-btn" target="_blank"></a>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <!-- Modal -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <img src="" alt="" class="modal-img" id="modalImage">
+            <button class="modal-close" id="modalClose">×</button>
+            <button class="modal-nav modal-prev" id="modalPrev">←</button>
+            <button class="modal-nav modal-next" id="modalNext">→</button>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
     <script src="./js/script.js"></script>
 </body>
 </html>
