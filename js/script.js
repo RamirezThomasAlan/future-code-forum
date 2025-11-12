@@ -188,3 +188,124 @@ galleryItems.forEach((item, index) => {
         }
     });
 });
+
+// Modal navigation
+modalPrev.addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    modalImage.src = galleryImages[currentImageIndex];
+});
+
+modalNext.addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+    modalImage.src = galleryImages[currentImageIndex];
+});
+
+// Close modal
+modalClose.addEventListener('click', () => {
+    modal.classList.remove('active');
+});
+
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('active');
+    }
+});
+
+// Keyboard navigation for modal
+document.addEventListener('keydown', (e) => {
+    if (modal.classList.contains('active')) {
+        if (e.key === 'ArrowLeft') {
+            modalPrev.click();
+        } else if (e.key === 'ArrowRight') {
+            modalNext.click();
+        } else if (e.key === 'Escape') {
+            modalClose.click();
+        }
+    }
+});
+
+// Form Submissions
+document.getElementById('registrationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    showNotification('Gracias por inscribirte, te contactaremos pronto.');
+    this.reset();
+});
+
+document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    showNotification('Te suscribiste correctamente. Pronto recibirás novedades.');
+    this.reset();
+});
+
+// Inscribirme Button
+document.getElementById('inscribirmeBtn').addEventListener('click', function() {
+    document.getElementById('inscripcion').scrollIntoView({ behavior: 'smooth' });
+});
+
+// Back to Top Button
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTop.classList.add('active');
+    } else {
+        backToTop.classList.remove('active');
+    }
+});
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Smooth Scrolling for Nav Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Notification System
+function showNotification(message) {
+    const notification = document.getElementById('notification');
+    notification.textContent = message;
+    notification.classList.add('active');
+    
+    setTimeout(() => {
+        notification.classList.remove('active');
+    }, 3000);
+}
+
+// Initialize counters when in view
+const aboutSection = document.getElementById('sobre');
+const aboutObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounters();
+            aboutObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+aboutObserver.observe(aboutSection);
+
+// Load favorites from localStorage
+window.addEventListener('load', () => {
+    const favorites = JSON.parse(localStorage.getItem('galleryFavorites') || '[]');
+    
+    galleryItems.forEach(item => {
+        const img = item.querySelector('.gallery-img');
+        const favoriteBtn = item.querySelector('.favorite-btn');
+        
+        if (favorites.includes(img.src)) {
+            favoriteBtn.style.color = 'red';
+        }
+    });
+});
